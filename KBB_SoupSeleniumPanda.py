@@ -25,9 +25,6 @@ soup = BeautifulSoup(driver.page_source, "lxml")
 
 m_data = soup.find_all("a", {"class":"model-name"})
 c_data = soup.find_all("a", {"class":"model-count"})
-m_data1 = soup.find_all()
-
-
 
 car_models = []
 for modelName in m_data:
@@ -46,7 +43,5 @@ df = pd.DataFrame(
 df.set_index('CarModel', inplace=True)
 print(df)
 #df.to_csv('CarModels.csv')
-
-
 
 #driver.find_element_by_id("model-scroll-right").click()
